@@ -11,21 +11,22 @@
 	<div>hey there partner!</div>
 
 	<div>
-		{% if categories %}
-		<ul>
-			{% for category in categories %}	
-				<li>{{ category.name }}</li>
-			{% endfor %}
-		</ul>
+		{% if categories %} 
+			<ul>
+	            {% for category in categories %}
+	            <!-- Following line changed to add an HTML hyperlink -->
+				<li>
+					<a href="/rango/category/{{ category.slug }}">{{ category.name }}</a> 
+				</li>
+				{% endfor %}
+			</ul>
 		{% else %}
-			<strong>There are not categories present.</strong>
+			<strong>There are no categories present.</strong> 
+
 		{% endif %}
 	</div>
 
-	<div>
-		<a href="/rango/about/">About Rango</a><br/>
-		<img src="{% static 'photo.jpg' %}" alt="A picture of eggs">
-	</div>
+	
 </body> 
 
 </html>

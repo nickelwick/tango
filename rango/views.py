@@ -26,6 +26,7 @@ def about(request):
 	context_dict = {'message' : 'Nick Elwick'}
 
 	return render_to_response('rango/about.html', context_dict, context)
+
 def show_category(request, category_name_slug):
 	# Create a context dictionary which we can pass to the template rendering engine.
 	context_dict = {}
@@ -52,4 +53,5 @@ def show_category(request, category_name_slug):
 		context_dict['pages'] = None
 
 		# Go render the response and return it to the client. 
-		return render(request, 'rango/category.html', context_dict)
+	return render(request, 'rango/category.html', context_dict)
+
